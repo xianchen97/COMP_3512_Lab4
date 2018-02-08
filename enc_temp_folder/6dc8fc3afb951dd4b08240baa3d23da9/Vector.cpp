@@ -40,9 +40,7 @@ PRECONDITION:
 POSTCONDITION:
 */
 void swap(Vector& lhs, Vector& rhs) {
-	std::swap(lhs._x, rhs._x);
-	std::swap(lhs._y, rhs._y);
-	std::swap(lhs._z, rhs._z);
+
 }
 
 //Getters
