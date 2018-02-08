@@ -216,7 +216,8 @@ Vector operator-(Vector lhs, Vector& rhs) {
 PRECONDITION:
 POSTCONDITION:
 */
-Vector& Vector::operator=(Vector) {
+Vector& Vector::operator=(Vector v) {
+	swap(*this, v);
 	return *this;
 }
 
