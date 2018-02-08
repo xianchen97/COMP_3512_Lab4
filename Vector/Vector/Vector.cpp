@@ -147,7 +147,7 @@ Vector& Vector::operator--() {
 }
 
 /*
-Decrement all the vecotr coordinate values by 1 postfix.
+Decrement all the vector coordinate values by 1 postfix.
 PRECONDITION: Vector created
 POSTCONDITION: All the values in the vector have been decreased by one.
 */
@@ -156,9 +156,6 @@ Vector Vector::operator--(int) {
 	operator--();
 	return temp;
 }
-
-
-
 
 /*
 The insertion operator will print out all the dimensions of the vector.
@@ -179,7 +176,10 @@ std::ostream& operator<<(std::ostream& out, const Vector& v) {
 PRECONDITION:
 POSTCONDITION:
 */
-Vector& Vector::operator+=(const Vector&) {
+Vector& Vector::operator+=(const Vector& rhs) {
+	_x += rhs._x;
+	_y += rhs._y;
+	_z += rhs._z;
 	return *this;
 }
 
@@ -189,7 +189,7 @@ PRECONDITION:
 POSTCONDITION:
 */
 Vector operator+(Vector lhs, Vector& rhs) {
-	return lhs;
+	return (lhs += rhs);
 }
 
 /*
@@ -197,7 +197,10 @@ Vector operator+(Vector lhs, Vector& rhs) {
 PRECONDITION:
 POSTCONDITION:
 */
-Vector& Vector::operator-=(const Vector&) {
+Vector& Vector::operator-=(const Vector& rhs) {
+	_x -= rhs._x;
+	_y -= rhs._y;
+	_z -= rhs._z;
 	return *this;
 }
 
@@ -207,7 +210,7 @@ PRECONDITION:
 POSTCONDITION:
 */
 Vector operator-(Vector lhs, Vector& rhs) {
-	return lhs;
+	return (lhs += rhs);
 }
 
 
