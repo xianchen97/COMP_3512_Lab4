@@ -12,14 +12,13 @@ public:
 	Vector(double, double, double);
 	Vector(const Vector&);
 
+	double get_X();
+	double get_Y();
+	double get_Z();
 
-	inline double get_Y();
-	inline double get_X();
-	inline double get_Z();
-
-	inline void set_Y(double);
-	inline void set_X(double);
-	inline void set_Z(double);
+	void set_X(double);
+	void set_Y(double);
+	void set_Z(double);
 
 	friend void swap(Vector&, Vector&);
 

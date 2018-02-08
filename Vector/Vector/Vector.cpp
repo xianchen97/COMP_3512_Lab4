@@ -48,21 +48,22 @@ void swap(Vector& lhs, Vector& rhs) {
 //Getters
 
 /*
-Return the value of y in the vector.
-PRECONDITION:
-POSTCONDITION:
-*/
-inline double Vector::get_Y() {
-	return _y;
-}
-
-/*
 Return the value of x in the vector.
 PRECONDITION:
 POSTCONDITION:
 */
 inline double Vector::get_X() {
 	return _x;
+}
+
+
+/*
+Return the value of y in the vector.
+PRECONDITION:
+POSTCONDITION:
+*/
+inline double Vector::get_Y() {
+	return _y;
 }
 
 /*
@@ -83,17 +84,18 @@ SETTERS
 PRECONDITION:
 POSTCONDITION:
 */
-inline void Vector::set_Y(double y) {
-	_y = { y };
+inline void Vector::set_X(double x) {
+	_x = x;
 }
+
 
 /*
 
 PRECONDITION:
 POSTCONDITION:
 */
-inline void Vector::set_X(double x) {
-	_x = x;
+inline void Vector::set_Y(double y) {
+	_y = y;
 }
 
 /*
