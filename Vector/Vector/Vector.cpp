@@ -109,41 +109,50 @@ Operator Overloading
 
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Increment all vector coordiante values by 1 prefix.
+PRECONDITION: Vector has been created.
+POSTCONDITION: All the values in the vector have been increased by one.
 */
 Vector& Vector::operator++() {
+	_x++;
+	_y++;
+	_z++;
 	return *this;
 }
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Increment all the vector coordinate values by 1 postifix.
+PRECONDITION: Vector created.
+POSTCONDITION: All the values of the vector have been increased by one.
 */
 Vector Vector::operator++(int) {
-	return *this;
+	Vector temp(*this);
+	operator++();
+	return temp;
 }
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Decrement all the vector coordinate values by 1 prefix.
+PRECONDITION: Vector created.
+POSTCONDITION: All the values in the vector have been decreased by one.
 */
 Vector& Vector::operator--() {
+	_x--;
+	_y--;
+	_z--;
 
 	return *this;
 }
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Decrement all the vecotr coordinate values by 1 postfix.
+PRECONDITION: Vector created
+POSTCONDITION: All the values in the vector have been decreased by one.
 */
 Vector Vector::operator--(int) {
-
-	return *this;
+	Vector temp(*this);
+	operator--();
+	return temp;
 }
 
 
@@ -151,8 +160,8 @@ Vector Vector::operator--(int) {
 
 /*
 The insertion operator will print out all the dimensions of the vector.
-PRECONDITION:
-POSTCONDITION:
+PRECONDITION: The vector has been created.
+POSTCONDITION: All the dimensions of the dimensions of the vector will be printed onto console formatted.
 */
 std::ostream& operator<<(std::ostream& out, const Vector& v) {
 	out << "The x is: " << v._x << endl << "The y is: " << v._y << endl << "The z is: " << v._z << endl;
