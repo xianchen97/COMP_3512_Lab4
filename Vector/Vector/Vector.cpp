@@ -53,7 +53,7 @@ PRECONDITION:
 POSTCONDITION:
 */
 inline double Vector::get_X() {
-	return _x;
+	_x;
 }
 
 
@@ -62,7 +62,7 @@ Return the value of y in the vector.
 PRECONDITION:
 POSTCONDITION:
 */
-inline double Vector::get_Y() {
+double Vector::get_Y() {
 	return _y;
 }
 
@@ -71,7 +71,7 @@ Return the value of z in the vector.
 PRECONDTION:
 POSTCONDITION:
 */
-inline double Vector::get_Z() {
+double Vector::get_Z() {
 	return _z;
 }
 
@@ -80,30 +80,30 @@ SETTERS
 */
 
 /*
-
+Sets the value of the x coordinate in the Vector.
 PRECONDITION:
 POSTCONDITION:
 */
-inline void Vector::set_X(double x) {
+void Vector::set_X(double x) {
 	_x = x;
 }
 
 
 /*
-
+Sets the value of the y coordinate in the Vector.
 PRECONDITION:
 POSTCONDITION:
 */
-inline void Vector::set_Y(double y) {
+void Vector::set_Y(double y) {
 	_y = y;
 }
 
 /*
-
+Sets the value of the z coordinate in the Vector.
 PRECONDITION:
 POSTCONDITION:
 */
-inline void Vector::set_Z(double z) {
+void Vector::set_Z(double z) {
 	_z = z;
 }
 
