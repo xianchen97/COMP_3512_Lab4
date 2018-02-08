@@ -155,7 +155,7 @@ PRECONDITION:
 POSTCONDITION:
 */
 std::ostream& operator<<(std::ostream& out, const Vector& v) {
-	out << "The x is: " << v._x << endl << "The y is: " << v._x << endl << "The z is: " << v._z << endl;
+	out << "The x is: " << v._x << endl << "The y is: " << v._y << endl << "The z is: " << v._z << endl;
 	return out;
 }
 
