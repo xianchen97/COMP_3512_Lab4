@@ -12,7 +12,7 @@ public:
 	Vector(double, double, double);
 	Vector(const Vector&);
 
-	inline double get_X();
+	double get_X();
 	double get_Y();
 	double get_Z();
 

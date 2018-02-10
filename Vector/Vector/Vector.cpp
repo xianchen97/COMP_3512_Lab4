@@ -63,8 +63,8 @@ Return the value of x in the vector.
 PRECONDITION: Vector has been initialized.
 POSTCONDITION: Returns the x co-ordinate.
 */
-inline double Vector::get_X() {
-	_x;
+double Vector::get_X() {
+	return _x;
 }
 
 
@@ -246,7 +246,7 @@ double operator*(const Vector& lhs, const Vector& rhs) {
 	double x = lhs._x * rhs._x;
 	double y = lhs._y * rhs._y;
 	double z = lhs._z * rhs._z;
-	return x * y * z;
+	return x + y + z;
 }
 
 /*
