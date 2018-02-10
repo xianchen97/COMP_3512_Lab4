@@ -4,19 +4,28 @@ using namespace std;
 //Destructor
 Vector::~Vector() {};
 
-//Consturctor
+//Constructor
+/*
+Constructor takes in three parameters and assigns it to the vector values.
+*/
 Vector::Vector(double x, double y, double z) {
 	_x = { x };
 	_y = { y };
 	_z = { z };
 }
 
+/*
+Default constructor that assigns zero to all variables.
+*/
 Vector::Vector() {
 	_x = { 0 };
 	_y = { 0 };
 	_z = { 0 };
 }
 
+/*
+Constructor that takes in a vector and assigns the current vector the values of the other vector.
+*/
 Vector::Vector(const Vector& copy) {
 	_x = { copy._x };
 	_y = { copy._y };
@@ -229,31 +238,35 @@ Vector& Vector::operator=(Vector v) {
 }
 
 /*
-Gets the dot product 
-PRECONDITION:
-POSTCONDITION:
+Gets the dot product between two vectors.
+PRECONDITION: Initialized both Vectors.
+POSTCONDITION: Returns the dot product of the vectors.
 */
 double operator*(const Vector& lhs, const Vector& rhs) {
 	double x = lhs._x * rhs._x;
 	double y = lhs._y * rhs._y;
 	double z = lhs._z * rhs._z;
+	return x * y * z;
 }
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Multiplies each value in the vector by a certain value.
+PRECONDITION: Vector has been initialized.
+POSTCONDITION: Vector values have been multiplied by passed in parameter value.
 */
 void Vector::operator*(double n) {
 	_x = _x * n;
 	_y = _y * n;
-	_z = _z * n
+	_z = _z * n;
 }
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Returns a value dependent on passed in input.
+1 = _x
+2 = _y
+3 = _z
+PRECONDITION: Vector has been initialized.
+POSTCONDITION: Returns a double passed on passed in parameter
 */
 double Vector::operator[](int n) {
 	if (n == 0)
