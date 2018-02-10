@@ -25,9 +25,9 @@ Vector::Vector(const Vector& copy) {
 
 //Member Functions
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Clears the co-ordinates in the vector.
+PRECONDITION: Vector has been initialized.
+POSTCONDITION: All the values in the vector have been cleared.
 */
 void Vector::clear() {
 	_x = 0;
@@ -37,9 +37,9 @@ void Vector::clear() {
 
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Swap the values within two functions
+PRECONDITION: Both vectors have been initialized.
+POSTCONDITION: Values between both objects have been swapped with eachother.
 */
 void swap(Vector& lhs, Vector& rhs) {
 	std::swap(lhs._x, rhs._x);
@@ -51,8 +51,8 @@ void swap(Vector& lhs, Vector& rhs) {
 
 /*
 Return the value of x in the vector.
-PRECONDITION:
-POSTCONDITION:
+PRECONDITION: Vector has been initialized.
+POSTCONDITION: Returns the x co-ordinate.
 */
 inline double Vector::get_X() {
 	_x;
@@ -61,8 +61,8 @@ inline double Vector::get_X() {
 
 /*
 Return the value of y in the vector.
-PRECONDITION:
-POSTCONDITION:
+PRECONDITION: Vector has been initialized.
+POSTCONDITION: Returns the y co-ordinate.
 */
 double Vector::get_Y() {
 	return _y;
@@ -70,8 +70,8 @@ double Vector::get_Y() {
 
 /*
 Return the value of z in the vector.
-PRECONDTION:
-POSTCONDITION:
+PRECONDTION: Vector has been initialized.
+POSTCONDITION: Returns the z co-ordinate.
 */
 double Vector::get_Z() {
 	return _z;
@@ -83,8 +83,8 @@ SETTERS
 
 /*
 Sets the value of the x coordinate in the Vector.
-PRECONDITION:
-POSTCONDITION:
+PRECONDITION: Vector has been initialized.
+POSTCONDITION: Changes the x coordinate with passed in value.
 */
 void Vector::set_X(double x) {
 	_x = x;
@@ -93,8 +93,8 @@ void Vector::set_X(double x) {
 
 /*
 Sets the value of the y coordinate in the Vector.
-PRECONDITION:
-POSTCONDITION:
+PRECONDITION: Vector has been initialized.
+POSTCONDITION: Changes the y coordinate with passed in value.
 */
 void Vector::set_Y(double y) {
 	_y = y;
@@ -102,8 +102,8 @@ void Vector::set_Y(double y) {
 
 /*
 Sets the value of the z coordinate in the Vector.
-PRECONDITION:
-POSTCONDITION:
+PRECONDITION: Vector has been created
+POSTCONDITION:  Changes the z coordinate with passed in value.
 */
 void Vector::set_Z(double z) {
 	_z = z;
@@ -176,9 +176,9 @@ std::ostream& operator<<(std::ostream& out, const Vector& v) {
 
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Adds a vectors value with the values of another vectors co-ordinates
+PRECONDITION: The vector's have been created.
+POSTCONDITION: Value on the left has side has been updated with the value on the right hand side.
 */
 Vector& Vector::operator+=(const Vector& rhs) {
 	_x += rhs._x;
@@ -188,18 +188,18 @@ Vector& Vector::operator+=(const Vector& rhs) {
 }
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Adds the values between two vectors and returns the added values.
+PRECONDITION: Both vectors have been intialized to contain values.
+POSTCONDITION: Returns a vector with the added values.
 */
 Vector operator+(Vector lhs, Vector& rhs) {
 	return (lhs += rhs);
 }
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Subtract a vectors value with the values of another vectors co-ordinates
+PRECONDITION: The vector's have been created.
+POSTCONDITION: Value on the left has side has been updated with the value on the right hand side.
 */
 Vector& Vector::operator-=(const Vector& rhs) {
 	_x -= rhs._x;
@@ -209,9 +209,9 @@ Vector& Vector::operator-=(const Vector& rhs) {
 }
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Subtracts the values between two vectors and returns the added values.
+PRECONDITION: Both vectors have been intialized to contain values.
+POSTCONDITION: Returns a vector with the subtracted values.
 */
 Vector operator-(Vector lhs, Vector& rhs) {
 	return (lhs += rhs);
@@ -219,30 +219,52 @@ Vector operator-(Vector lhs, Vector& rhs) {
 
 
 /*
-
-PRECONDITION:
-POSTCONDITION:
+Current vecotr has been assigned with values of another vector.
+PRECONDITION: Both vectors have been initialized.
+POSTCONDITION: LHS vector is assigned the values of the RHS Vector.
 */
 Vector& Vector::operator=(Vector v) {
 	swap(*this, v);
 	return *this;
 }
 
-
 /*
-
+Gets the dot product 
 PRECONDITION:
 POSTCONDITION:
 */
-double operator*(const Vector& lhs, const Vector& rhs);
-
-
-/*
-
-PRECONDITION:
-POSTCONDITION:
-*/
-void Vector::operator*(double) {
+double operator*(const Vector& lhs, const Vector& rhs) {
+	double x = lhs._x * rhs._x;
+	double y = lhs._y * rhs._y;
+	double z = lhs._z * rhs._z;
 }
+
+/*
+
+PRECONDITION:
+POSTCONDITION:
+*/
+void Vector::operator*(double n) {
+	_x = _x * n;
+	_y = _y * n;
+	_z = _z * n
+}
+
+/*
+
+PRECONDITION:
+POSTCONDITION:
+*/
+double Vector::operator[](int n) {
+	if (n == 0)
+		return _x;
+	else if(n==1)
+		return _y;
+	else
+		return _z;
+}
+
+
+
 
 

@@ -50,9 +50,6 @@ public:
 	
 	void operator*(double);
 
+	double operator[](int n);
 
-
-
-
-
-};
+};	
